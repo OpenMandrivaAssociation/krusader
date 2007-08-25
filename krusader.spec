@@ -1,7 +1,7 @@
 
 %define name	krusader
 %define version	1.80.0
-%define rel	1
+%define rel	2
 %define release %mkrel %rel
 
 %if %mdkversion <= 200710
