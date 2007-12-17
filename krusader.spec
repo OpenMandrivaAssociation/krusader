@@ -15,7 +15,6 @@ Release: 	%{release}
 Source0: 	http://downloads.sourceforge.net/krusader/%{name}-%{version}.tar.gz
 License: 	GPL
 Group: 		File tools
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
 URL: 		http://krusader.sourceforge.net/
 Epoch:		3
 BuildRequires:  kdelibs-devel
