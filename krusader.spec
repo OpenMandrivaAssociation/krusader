@@ -44,25 +44,6 @@ synchronisation, file content comparisons, powerful batch renaming
 and much much more. It supports a wide variety of archive formats
 and can handle other KIO slaves such as smb or fish.
 
-%prep
-%if %snapshot
-%setup -q -n %name-%snapshot
-%else
-%setup -q
-%endif
-
-%build
-%cmake_kde4
-%make
-
-%install
-rm -rf %{buildroot}
-%makeinstall_std -Cbuild
-
-%find_lang krusader
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %if %mdkversion < 200900
 %post
@@ -91,3 +72,24 @@ rm -rf $RPM_BUILD_ROOT
 %{_kde_iconsdir}/locolor/*/apps/krusader*.png
 %{_kde_libdir}/kde4/*.so
 
+#--------------------------------------------------------------------
+
+%prep
+%if %snapshot
+%setup -q -n %name-%snapshot
+%else
+%setup -q
+%endif
+
+%build
+%cmake_kde4
+%make
+
+%install
+rm -rf %{buildroot}
+%makeinstall_std -Cbuild
+
+%find_lang krusader
+
+%clean
+rm -rf $RPM_BUILD_ROOT
