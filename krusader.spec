@@ -2,7 +2,7 @@
 %define name	krusader
 %define version	2.0
 %define snapshot 6014
-%define rel	2
+%define rel	3
 
 %if %snapshot
 %define release	%mkrel 0.svn%snapshot.%rel
