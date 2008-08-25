@@ -1,7 +1,7 @@
 %define name	krusader
 %define version	2.0
 %define snapshot 6065
-%define rel	1
+%define rel	2
 
 %if %snapshot
 %define release	%mkrel 0.svn%snapshot.%rel
@@ -27,10 +27,6 @@ URL: 		http://krusader.sourceforge.net/
 Epoch:		3
 BuildRequires:  kdelibs4-devel
 Obsoletes:	kde3-krusader < 2:1.02-4
-Provides:	kde3-krusader
-# crystalsvg:
-Requires(post):	kdelibs-common
-Requires(postun): kdelibs-common
 
 %description
 Krusader is an advanced twin panel (commander style) file manager
