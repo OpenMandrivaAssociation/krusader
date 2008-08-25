@@ -19,8 +19,8 @@ Source:		%{name}-%{snapshot}.tar.bz2
 %else
 Source: 	http://downloads.sourceforge.net/krusader/%{name}-%{version}.tar.gz
 %endif
-Patch0:		krusader-2.0-fix-underlink.patch
-License: 	GPL
+Patch0:		krusader-2.0-fix-build.patch
+License: 	GPLv2+
 Group: 		File tools
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 URL: 		http://krusader.sourceforge.net/
