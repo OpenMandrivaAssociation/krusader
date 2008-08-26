@@ -1,7 +1,7 @@
 %define name	krusader
 %define version	2.0
-%define snapshot 6065
-%define rel	2
+%define snapshot 6074
+%define rel	1
 
 %if %snapshot
 %define release	%mkrel 0.svn%snapshot.%rel
@@ -19,7 +19,6 @@ Source:		%{name}-%{snapshot}.tar.bz2
 %else
 Source: 	http://downloads.sourceforge.net/krusader/%{name}-%{version}.tar.gz
 %endif
-Patch0:		krusader-2.0-fix-build.patch
 License: 	GPLv2+
 Group: 		File tools
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -40,7 +39,6 @@ synchronisation, file content comparisons, powerful batch renaming
 and much much more. It supports a wide variety of archive formats
 and can handle other KIO slaves such as smb or fish.
 
-
 %if %mdkversion < 200900
 %post
 %update_menus
@@ -58,7 +56,6 @@ and can handle other KIO slaves such as smb or fish.
 %files -f krusader.lang
 %defattr(-,root,root)
 %doc README AUTHORS ChangeLog TODO COPYING krusader.lsm
-%doc %{_kde_datadir}/doc/HTML/en/*
 %{_kde_bindir}/krusader
 %{_kde_datadir}/applications/kde4/krusader*.desktop
 %{_kde_datadir}/apps/krusader
@@ -76,7 +73,6 @@ and can handle other KIO slaves such as smb or fish.
 %else
 %setup -q
 %endif
-%patch0 -p0
 
 %build
 %cmake_kde4
@@ -86,7 +82,7 @@ and can handle other KIO slaves such as smb or fish.
 rm -rf %{buildroot}
 %makeinstall_std -Cbuild
 
-%find_lang krusader
+%find_lang krusader --with-html
 
 %clean
 rm -rf $RPM_BUILD_ROOT
