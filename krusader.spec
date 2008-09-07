@@ -1,6 +1,6 @@
 %define name	krusader
 %define version	2.0
-%define snapshot 6074
+%define snapshot 6078
 %define rel	1
 
 %if %snapshot
