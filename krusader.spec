@@ -1,6 +1,6 @@
 %define name	krusader
 %define version	2.0
-%define snapshot 6117
+%define snapshot 6249
 %define rel	1
 
 %if %snapshot
@@ -19,6 +19,7 @@ Source:		%{name}-%{snapshot}.tar.bz2
 %else
 Source: 	http://downloads.sourceforge.net/krusader/%{name}-%{version}.tar.gz
 %endif
+Patch0:		krusader-6249-fix-str-fmt.patch
 License: 	GPLv2+
 Group: 		File tools
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -73,6 +74,7 @@ and can handle other KIO slaves such as smb or fish.
 %else
 %setup -q
 %endif
+%patch0 -p0
 
 %build
 %cmake_kde4
