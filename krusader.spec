@@ -1,24 +1,8 @@
-%define name	krusader
-%define version	2.0
-%define snapshot 6249
-%define rel	1
-
-%if %snapshot
-%define release	%mkrel 0.svn%snapshot.%rel
-%else
-%define release %mkrel %rel
-%endif
-
 Summary: 	Advanced KDE twin-panel file-manager
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
-%if %snapshot
-# http://krusader.svn.sourceforge.net/svnroot/krusader/trunk/krusader_kde4
-Source:		%{name}-%{snapshot}.tar.bz2
-%else
-Source: 	http://downloads.sourceforge.net/krusader/%{name}-%{version}.tar.gz
-%endif
+Name: 		krusader
+Version: 	2.0.0
+Release: 	%{mkrel 1}
+Source0:	http://prdownloads.sourceforge.net/krusader/%name-%version.tar.gz
 Patch0:		krusader-6249-fix-str-fmt.patch
 License: 	GPLv2+
 Group: 		File tools
@@ -69,11 +53,7 @@ and can handle other KIO slaves such as smb or fish.
 #--------------------------------------------------------------------
 
 %prep
-%if %snapshot
-%setup -q -n %name-%snapshot
-%else
 %setup -q
-%endif
 %patch0 -p0
 
 %build
