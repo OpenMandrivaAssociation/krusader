@@ -1,12 +1,14 @@
 Summary: 	Advanced KDE twin-panel file-manager
 Name: 		krusader
 Version: 	2.0.0
-Release: 	%{mkrel 2}
+Release: 	%{mkrel 3}
 Source0:	http://prdownloads.sourceforge.net/krusader/%name-%version.tar.gz
 Patch0:		krusader-6249-fix-str-fmt.patch
 # fixes krusader bug #2793916, window width gets bigger when path is long
 Patch1:		krusader-svn987282-fix-window-width.patch
 Patch2:		krusader-missing-include.patch
+# submitted patch upstream in bug #229489
+Patch3:		krusader-fix-crash-on-file-removal-race.patch
 License: 	GPLv2+
 Group: 		File tools
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -60,6 +62,7 @@ and can handle other KIO slaves such as smb or fish.
 %patch0 -p0
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %cmake_kde4
