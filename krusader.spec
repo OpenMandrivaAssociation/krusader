@@ -9,6 +9,8 @@ Patch1:		krusader-svn987282-fix-window-width.patch
 Patch2:		krusader-missing-include.patch
 # submitted patch upstream in bug #229489
 Patch3:		krusader-fix-crash-on-file-removal-race.patch
+Patch4:		krusader-2.0.0-qt47.patch
+Patch5:		krusader-2.0.0-gcc45.patch
 License: 	GPLv2+
 Group: 		File tools
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -63,6 +65,8 @@ and can handle other KIO slaves such as smb or fish.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p0
+%patch5 -p0
 
 %build
 %cmake_kde4
