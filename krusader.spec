@@ -11,6 +11,7 @@ Patch2:		krusader-missing-include.patch
 Patch3:		krusader-fix-crash-on-file-removal-race.patch
 Patch4:		krusader-2.0.0-qt47.patch
 Patch5:		krusader-2.0.0-gcc45.patch
+Patch6:		%{name}.desktop.patch
 License: 	GPLv2+
 Group: 		File tools
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -67,6 +68,7 @@ and can handle other KIO slaves such as smb or fish.
 %patch3 -p1
 %patch4 -p0
 %patch5 -p0
+%patch6 -p0
 
 %build
 %cmake_kde4
