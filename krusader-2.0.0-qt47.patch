@@ -1,0 +1,33 @@
+--- krusader/MountMan/kmountmangui.h.qt47	2010-12-07 08:49:02.000000000 +0000
++++ krusader/MountMan/kmountmangui.h	2010-12-07 08:49:57.000000000 +0000
+@@ -112,7 +112,7 @@
+ /////////////////////////////////////////////////////////////////
+ class fsData {
+ public:
+-   fsData() : Name( 0 ), Type( 0 ), MntPoint( 0 ), TotalBlks( 0 ),
++   fsData() : Name( QString() ), Type( QString() ), MntPoint( QString() ), TotalBlks( 0 ),
+    FreeBlks( 0 ), Mounted( false ) {}
+ 
+    // get information
+--- krusader/krslots.cpp.qt47	2010-12-07 08:59:32.000000000 +0000
++++ krusader/krslots.cpp	2010-12-07 09:00:49.000000000 +0000
+@@ -450,7 +450,7 @@
+ 		KrSearchDialog::SearchDialog->raise();
+ 		KrSearchDialog::SearchDialog->activateWindow();
+ 	} else
+-		KrSearchDialog::SearchDialog = new KrSearchDialog();
++		KrSearchDialog::SearchDialog = new KrSearchDialog(QString());
+ }
+ 
+ void KRslots::locate()
+--- krusader/main.cpp.build	2010-12-07 08:56:23.000000000 +0000
++++ krusader/main.cpp	2010-12-07 08:58:24.000000000 +0000
+@@ -217,7 +217,7 @@
+     fprintf( stderr, "DBus Error: %s, %s\n", reply.error().name().toLocal8Bit().constData(), reply.error().message().toLocal8Bit().constData() );
+ 
+   if( reply.isValid() && (bool)reply ) {
+-    fprintf( stderr, "%s", i18n( "Application already running!\n" ).toLocal8Bit() );
++    fprintf( stderr, "%s", i18n( "Application already running!\n" ).toLocal8Bit().constData() );
+     KStartupInfo::appStarted();
+     return 1;
+   }

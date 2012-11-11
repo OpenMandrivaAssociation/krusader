@@ -1,0 +1,64 @@
+diff -p -up krusader-2.0.0/krusader/Dialogs/newftpgui.cpp.orig krusader-2.0.0/krusader/Dialogs/newftpgui.cpp
+--- krusader-2.0.0/krusader/Dialogs/newftpgui.cpp.orig	2009-04-11 22:40:12.000000000 +0300
++++ krusader-2.0.0/krusader/Dialogs/newftpgui.cpp	2009-07-26 03:39:04.920093535 +0300
+@@ -101,6 +101,7 @@ newFTPGUI::newFTPGUI( QWidget* parent )
+     grid_layout->addWidget( url );
+     //url->setMaximumHeight( 20 );
+     url->setMaxCount( 25 );
++    url->setMinimumContentsLength(10);
+     url->setDuplicatesEnabled( false );
+     connect( url, SIGNAL( activated( const QString& )),
+              url, SLOT( addToHistory( const QString& )));
+diff -p -up krusader-2.0.0/krusader/Dialogs/packguibase.cpp.orig krusader-2.0.0/krusader/Dialogs/packguibase.cpp
+--- krusader-2.0.0/krusader/Dialogs/packguibase.cpp.orig	2009-04-11 22:40:12.000000000 +0300
++++ krusader-2.0.0/krusader/Dialogs/packguibase.cpp	2009-07-26 03:39:45.919093425 +0300
+@@ -274,6 +274,8 @@ PackGUIBase::PackGUIBase( QWidget* paren
+     commandLineSwitches = new KHistoryComboBox( advancedWidget );
+     commandLineSwitches->setMaxCount(25);  // remember 25 items
+     commandLineSwitches->setDuplicatesEnabled(false);
++    commandLineSwitches->setMinimumContentsLength(10);
++
+     QStringList list = group.readEntry("Command Line Switches", QStringList() );
+     commandLineSwitches->setHistoryItems(list);
+ 
+diff -p -up krusader-2.0.0/krusader/Filter/generalfilter.cpp.orig krusader-2.0.0/krusader/Filter/generalfilter.cpp
+--- krusader-2.0.0/krusader/Filter/generalfilter.cpp.orig	2009-04-11 22:40:19.000000000 +0300
++++ krusader-2.0.0/krusader/Filter/generalfilter.cpp	2009-07-26 03:42:02.319093530 +0300
+@@ -120,6 +120,7 @@ GeneralFilter::GeneralFilter ( FilterTab
+ 	searchFor->setEditable ( true );
+ 	searchFor->setDuplicatesEnabled ( false );
+ 	searchFor->setMaxCount ( 25 );
++	searchFor->setMinimumContentsLength(10);
+ 	searchForLabel->setBuddy ( searchFor );
+ 	nameGroupLayout->addWidget ( searchFor, 0, 1, 1, 2 );
+ 
+@@ -256,6 +257,7 @@ GeneralFilter::GeneralFilter ( FilterTab
+ 	containsText->setSizePolicy ( containsTextPolicy );
+ 	containsText->setDuplicatesEnabled ( false );
+ 	containsText->setMaxCount ( 25 );
++	containsText->setMinimumContentsLength(10);
+ 	containsTextLayout->addWidget ( containsText );
+ 	containsLabel->setBuddy ( containsText );
+ 	
+diff -p -up krusader-2.0.0/krusader/GUI/kcmdline.cpp.orig krusader-2.0.0/krusader/GUI/kcmdline.cpp
+--- krusader-2.0.0/krusader/GUI/kcmdline.cpp.orig	2009-04-11 22:40:18.000000000 +0300
++++ krusader-2.0.0/krusader/GUI/kcmdline.cpp	2009-07-26 03:41:02.119092788 +0300
+@@ -78,6 +78,7 @@ KCMDLine::KCMDLine( QWidget *parent ) : 
+   completion.setMode( KUrlCompletion::FileCompletion );
+   cmdLine = new KrHistoryCombo( this );
+   cmdLine->setMaxCount(100);  // remember 100 commands
++  cmdLine->setMinimumContentsLength(10);
+   cmdLine->setDuplicatesEnabled( false );
+   cmdLine->setFont( KGlobalSettings::generalFont() );
+   cmdLine->setMaximumHeight( height );
+diff -p -up krusader-2.0.0/krusader/Locate/locate.cpp.orig krusader-2.0.0/krusader/Locate/locate.cpp
+--- krusader-2.0.0/krusader/Locate/locate.cpp.orig	2009-04-11 22:40:16.000000000 +0300
++++ krusader-2.0.0/krusader/Locate/locate.cpp	2009-07-26 03:40:19.432095775 +0300
+@@ -139,6 +139,7 @@ LocateDlg::LocateDlg() : KDialog( 0 ), i
+   hbox->addWidget( label );
+ 
+   locateSearchFor = new KHistoryComboBox( false, hboxWidget );
++  locateSearchFor->setMinimumContentsLength(10);
+   hbox->addWidget( locateSearchFor );
+ 
+   label->setBuddy( locateSearchFor );
