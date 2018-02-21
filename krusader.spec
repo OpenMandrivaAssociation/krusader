@@ -8,6 +8,7 @@ Group:		File tools
 URL:		http://krusader.sourceforge.net/
 Source0:	http://download.kde.org/stable/krusader/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5Concurrent)
 BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Widgets)
