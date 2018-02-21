@@ -1,6 +1,6 @@
 Summary:	Advanced KDE twin-panel file-manager
 Name:		krusader
-Version:	2.5.0
+Version:	2.6.0
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -53,10 +53,11 @@ and can handle other KIO slaves such as smb or fish.
 %{_datadir}/krusader
 %{_datadir}/kservices5/*.protocol
 %{_datadir}/kxmlgui5/krusader
-%{_datadir}/appdata/org.kde.krusader.appdata.xml
+%{_datadir}/metainfo/org.kde.krusader.appdata.xml
 %{_sysconfdir}/xdg/kio_isorc
 %{_iconsdir}/hicolor/*/apps/krusader*.png
 %{_libdir}/qt5/plugins/kio*.so
+%{_mandir}/man1/krusader.1*
 
 #--------------------------------------------------------------------
 
@@ -70,5 +71,5 @@ and can handle other KIO slaves such as smb or fish.
 %install
 %ninja_install -C build
 
-%find_lang %{name} --with-html
+%find_lang %{name} --with-html --with-man
 

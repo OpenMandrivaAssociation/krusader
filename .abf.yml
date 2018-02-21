@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   krusader-2.5.0.tar.xz: c6fed66fcfe1b099cc4dd19a209062c42ed67147
+sources:
+  krusader-2.6.0.tar.xz: 5b866312f9f4da30d5409eda33e4cbe802b3b277
