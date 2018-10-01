@@ -1,6 +1,6 @@
 Summary:	Advanced KDE twin-panel file-manager
 Name:		krusader
-Version:	2.6.0
+Version:	2.7.1
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -48,7 +48,7 @@ and much much more. It supports a wide variety of archive formats
 and can handle other KIO slaves such as smb or fish.
 
 %files -f krusader.lang
-%doc README AUTHORS ChangeLog TODO COPYING krusader.lsm
+%doc README AUTHORS ChangeLog TODO COPYING
 %{_bindir}/krusader
 %{_datadir}/applications/org.kde.krusader*.desktop
 %{_datadir}/krusader
