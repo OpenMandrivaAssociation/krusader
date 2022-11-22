@@ -49,16 +49,16 @@ and much much more. It supports a wide variety of archive formats
 and can handle other KIO slaves such as smb or fish.
 
 %files -f krusader.lang
-%doc README AUTHORS ChangeLog TODO COPYING
+%doc README AUTHORS ChangeLog TODO
 %{_bindir}/krusader
 %{_datadir}/applications/org.kde.krusader*.desktop
 %{_datadir}/krusader
-%{_datadir}/kservices5/*.protocol
+#{_datadir}/kservices5/*.protocol
 %{_datadir}/kxmlgui5/krusader
 %{_datadir}/metainfo/org.kde.krusader.appdata.xml
 %{_sysconfdir}/xdg/kio_isorc
 %{_iconsdir}/hicolor/*/apps/krusader*.png
-%{_libdir}/qt5/plugins/kio*.so
+#{_libdir}/qt5/plugins/kio*.so
 %{_mandir}/man1/krusader.1*
 
 #--------------------------------------------------------------------
