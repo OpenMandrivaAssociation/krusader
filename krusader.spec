@@ -1,6 +1,6 @@
 Summary:	Advanced KDE twin-panel file-manager
 Name:		krusader
-Version:	2.7.2
+Version:	2.8.0
 Release:	1
 Epoch:		3
 License:	GPLv2+
