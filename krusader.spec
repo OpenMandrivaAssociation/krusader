@@ -58,7 +58,8 @@ and can handle other KIO slaves such as smb or fish.
 %{_datadir}/metainfo/org.kde.krusader.appdata.xml
 %{_sysconfdir}/xdg/kio_isorc
 %{_iconsdir}/hicolor/*/apps/krusader*.png
-#{_libdir}/qt5/plugins/kio*.so
+%{_libdir}/qt5/plugins/kf5/kio/kio_iso.so
+%{_libdir}/qt5/plugins/kf5/kio/kio_krarc.so
 %{_mandir}/man1/krusader.1*
 
 #--------------------------------------------------------------------
