@@ -1,12 +1,12 @@
 Summary:	Advanced KDE twin-panel file-manager
 Name:		krusader
-Version:	2.8.0
-Release:	3
+Version:	2.8.1
+Release:	1
 Epoch:		3
 License:	GPLv2+
 Group:		File tools
-URL:		http://krusader.sourceforge.net/
-Source0:	http://download.kde.org/stable/krusader/%{version}/%{name}-%{version}.tar.xz
+URL:		https://krusader.sourceforge.net/
+Source0:	https://download.kde.org/stable/krusader/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Concurrent)
 BuildRequires:	pkgconfig(Qt5Gui)
