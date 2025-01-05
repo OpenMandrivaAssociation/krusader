@@ -36,7 +36,6 @@ BuildRequires:	cmake(KF6WindowSystem)
 BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(KF6GuiAddons)
 BuildRequires:	qt6-qtbase-theme-gtk3
-BuildRequires:	
 
 %description
 Krusader is an advanced twin panel (commander style) file manager
