@@ -7,6 +7,7 @@ Group:		File tools
 URL:		https://krusader.sourceforge.net/
 Source0:	https://download.kde.org/stable/krusader/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(Qt6Core)
+BuildRequires:	pkgconfig(Qt6Core5Compat)
 BuildRequires:	pkgconfig(Qt6Concurrent)
 BuildRequires:	pkgconfig(Qt6Gui)
 BuildRequires:	pkgconfig(Qt6DBus)
@@ -34,6 +35,8 @@ BuildRequires:	cmake(KF6WidgetsAddons)
 BuildRequires:	cmake(KF6WindowSystem)
 BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(KF6GuiAddons)
+BuildRequires:	qt6-qtbase-theme-gtk3
+BuildRequires:	
 
 %description
 Krusader is an advanced twin panel (commander style) file manager
