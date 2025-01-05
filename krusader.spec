@@ -1,40 +1,39 @@
 Summary:	Advanced KDE twin-panel file-manager
 Name:		krusader
-Version:	2.8.1
-Release:	2
-Epoch:		3
+Version:	2.9.0
+Release:	1
 License:	GPLv2+
 Group:		File tools
 URL:		https://krusader.sourceforge.net/
 Source0:	https://download.kde.org/stable/krusader/%{version}/%{name}-%{version}.tar.xz
-BuildRequires:	pkgconfig(Qt5Core)
-BuildRequires:	pkgconfig(Qt5Concurrent)
-BuildRequires:	pkgconfig(Qt5Gui)
-BuildRequires:	pkgconfig(Qt5DBus)
-BuildRequires:	pkgconfig(Qt5Widgets)
-BuildRequires:	pkgconfig(Qt5PrintSupport)
-BuildRequires:	pkgconfig(Qt5Xml)
+BuildRequires:	pkgconfig(Qt6Core)
+BuildRequires:	pkgconfig(Qt6Concurrent)
+BuildRequires:	pkgconfig(Qt6Gui)
+BuildRequires:	pkgconfig(Qt6DBus)
+BuildRequires:	pkgconfig(Qt6Widgets)
+BuildRequires:	pkgconfig(Qt6PrintSupport)
+BuildRequires:	pkgconfig(Qt6Xml)
 BuildRequires:	pkgconfig(zlib)
-BuildRequires:	cmake(KF5Archive)
-BuildRequires:	cmake(KF5Bookmarks)
-BuildRequires:	cmake(KF5Codecs)
-BuildRequires:	cmake(KF5Completion)
-BuildRequires:	cmake(KF5CoreAddons)
-BuildRequires:	cmake(KF5Config)
-BuildRequires:	cmake(KF5DocTools)
-BuildRequires:	cmake(KF5I18n)
-BuildRequires:	cmake(KF5IconThemes)
-BuildRequires:	cmake(KF5ItemViews)
-BuildRequires:	cmake(KF5KIO)
-BuildRequires:	cmake(KF5Notifications)
-BuildRequires:	cmake(KF5Parts)
-BuildRequires:	cmake(KF5Solid)
-BuildRequires:	cmake(KF5TextWidgets)
-BuildRequires:	cmake(KF5Wallet)
-BuildRequires:	cmake(KF5WidgetsAddons)
-BuildRequires:	cmake(KF5WindowSystem)
-BuildRequires:	cmake(KF5XmlGui)
-BuildRequires:	cmake(KF5GuiAddons)
+BuildRequires:	cmake(KF6Archive)
+BuildRequires:	cmake(KF6Bookmarks)
+BuildRequires:	cmake(KF6Codecs)
+BuildRequires:	cmake(KF6Completion)
+BuildRequires:	cmake(KF6CoreAddons)
+BuildRequires:	cmake(KF6Config)
+BuildRequires:	cmake(KF6DocTools)
+BuildRequires:	cmake(KF6I18n)
+BuildRequires:	cmake(KF6IconThemes)
+BuildRequires:	cmake(KF6ItemViews)
+BuildRequires:	cmake(KF6KIO)
+BuildRequires:	cmake(KF6Notifications)
+BuildRequires:	cmake(KF6Parts)
+BuildRequires:	cmake(KF6Solid)
+BuildRequires:	cmake(KF6TextWidgets)
+BuildRequires:	cmake(KF6Wallet)
+BuildRequires:	cmake(KF6WidgetsAddons)
+BuildRequires:	cmake(KF6WindowSystem)
+BuildRequires:	cmake(KF6XmlGui)
+BuildRequires:	cmake(KF6GuiAddons)
 
 %description
 Krusader is an advanced twin panel (commander style) file manager
@@ -58,21 +57,22 @@ and can handle other KIO slaves such as smb or fish.
 %{_datadir}/metainfo/org.kde.krusader.appdata.xml
 %{_sysconfdir}/xdg/kio_isorc
 %{_iconsdir}/hicolor/*/apps/krusader*.png
-%{_libdir}/qt5/plugins/kf5/kio/kio_iso.so
-%{_libdir}/qt5/plugins/kf5/kio/kio_krarc.so
+%{_libdir}/qt6/plugins/kf6/kio/kio_iso.so
+%{_libdir}/qt6/plugins/kf6/kio/kio_krarc.so
 %{_mandir}/man1/krusader.1*
 
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
+%cmake   \
+          -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
+          -G Ninja
 %build
-%cmake_kde5
-%ninja
+%ninja_build -C build
 
 %install
 %ninja_install -C build
 
 %find_lang %{name} --with-html --with-man
-
