@@ -7,6 +7,7 @@ Group:		File tools
 URL:		https://krusader.sourceforge.net/
 Source0:	https://download.kde.org/stable/krusader/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(Qt6Core)
+BuildRequires:	pkgconfig(Qt6Core5Compat)
 BuildRequires:	pkgconfig(Qt6Concurrent)
 BuildRequires:	pkgconfig(Qt6Gui)
 BuildRequires:	pkgconfig(Qt6DBus)
